@@ -6,8 +6,6 @@ except:
 lines=file1.readlines()
 file1.close()
 dict={}
-count=0
-sum=0
 file2=open('output.txt','w')
 
 for line in lines:
@@ -20,14 +18,18 @@ for line in lines:
 			dict[key]=1
 		else:
 			dict[key]+=1
-
+count=0
+sum=0
 for key in dict:
-	file2.write(key)
+	res=key,dict[key]
+	file2.write(str(res))
 	file2.write('\n')
-	for item in key:
-		count+=1
-		sum+=count
+#average eseptey
+	count+=1
+	sum+=count
 
 ave=sum/count
 
 print('kolichestvo:',count, '  Summa:',sum,'  Average:',ave)
+
+
