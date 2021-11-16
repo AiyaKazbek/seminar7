@@ -18,18 +18,16 @@ for line in lines:
 			dict[key]=1
 		else:
 			dict[key]+=1
-count=0
+
 sum=0
 for key in dict:
 	res=key,dict[key]
 	file2.write(str(res))
 	file2.write('\n')
 #average eseptey
-	count+=1
-	sum+=count
+	sum+=dict[key]
+ave=sum/len(dict)
 
-ave=sum/count
-
-print('kolichestvo:',count, '  Summa:',sum,'  Average:',ave)
+print('Average:',ave, '\nSumma:',sum, '\nDlina dict:',len(dict))
 
 
